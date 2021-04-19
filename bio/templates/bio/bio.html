@@ -1,6 +1,38 @@
 {% extends 'base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'bio/css/bio.css' %}" type="text/css">
+{% endblock %}
 
 {% block content %}
-<div class="body-container"></div>
-<h1> Is this app working? </h1>
+<div class="container mb-5 body-container">
+    <div class="row no-gutters">
+        <!-- Page header -->
+        <div class="col-sm-12 px-4">
+            <h1 class="my-4 ml-2">Bio</h1>
+        </div>
+    </div>
+    <div class="row no-gutters align-items-center py-5 px-3" id="about-row">
+        <div class="col-sm-12 px-4">
+            <div class="media">
+                <img src="https://res.cloudinary.com/dktjdf0v1/image/upload/v1618784109/JamesBIckmore/IMG-20210316-WA0000_uap9hk.jpg"
+                class="mr-3 d-sm-block d-none" alt="Profile picture">
+                <div class="media-body">
+                    <h2 class="mt-0 pb-3"><strong>About James</strong> </h2>
+                    <p {text-align: center}>James is a first class session artist. Not only has he styled hair for the likes of Italian Vogue
+                        and other high end publications he has worked his magic on celebrity artists such as Camilla
+                        Cabello. James not only can be found at Rose&amp;Wild Hair Salon, but he can be seen heading the
+                        hair on the X-Factor Tour. Working with noteworthy designers at fashion week and collaborating
+                        with industry experts creating fashion and editorial campaigns. He has a flair for precision
+                        cutting which includes all types of male grooming and fashion forward styling but specialises in
+                        beautiful and effortless finishes. James’s clients really can’t get enough of his
+                        professionalism and undeniable sense of taste and style.</p>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</div>
+
 {% endblock %}

@@ -1,0 +1,9 @@
+#about-row {
+    background-color: var(--champagne);
+    box-shadow: var(--dark-small-box-shadow);
+}
+
+.media img {
+    width: 264px;
+    height: auto;
+}
