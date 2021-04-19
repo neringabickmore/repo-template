@@ -13,11 +13,12 @@
     --white: #ffffff;
     --pumpkin: #EB731D;
     --jet: #333533;
-    --timberwolf: #CFDBD5;
+    --platinum: #E5E5E5;
+    --champagne: #FCD48F;
 
     /* box shadows */
     --dark-large-box-shadow: 6px 6px 12px var(--jet);
-    --dark-small-box-shadow: 1px 1px 5px var(--jet)
+    --dark-small-box-shadow: 1px 1px 7px 0 var(--jet);
 }
 
 html {
@@ -50,7 +51,7 @@ h6 {
 }
 
 p {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     text-align: justify;
 }
 
@@ -93,11 +94,15 @@ p {
     margin-right: -15px;
     margin-left: -15px;
 }
+#main-nav,
+.nav-link-header {
+    color: var(--black);
+    background-color: var(--white);
+}
 
 #mobile-nav,
-#main-nav,
-.nav-link-header,
 .dropdown-menu-header,
+#mobile-nav .nav-link-header,
 .dropdown-menu-header li a {
     color: var(--white);
     background-color: var(--black);
@@ -112,7 +117,7 @@ p {
 
 .nav-link-header,
 .dropdown-menu-header li a {
-    font-size: 1.5rem;
+    font-size: 1.8rem;
     font-family: var(--header-font);
     letter-spacing: 0.1vw;
 }
@@ -133,8 +138,8 @@ p {
 /* footer */
 .footer {
     background-color: var(--jet);
-    color: var(--timberwolf);
-    padding: 3rem 2rem;
+    color: var(--platinum);
+    padding: 3rem 2rem 2rem 2rem;
 }
 
 .footer h4 {
@@ -148,8 +153,8 @@ p {
     list-style-type: none;
 }
 
-.footer ul i {
-    color: var(--timberwolf);
+.footer a i {
+    color: var(--platinum);
     width: 32px;
     height: 32px;
     padding: 1.2rem 0;
@@ -158,30 +163,23 @@ p {
 
 .footer-link {
     font-family: var(--header-font);
-    font-size: 1.2rem;
-    color: var(--timberwolf);
+    font-size: 1.4rem;
+    color: var(--platinum);
 }
 
 .footer-contact-info p {
     font-size: 1.4rem;
 }
 
-.footer ul i:hover,
-.footer-nav .nav-link:hover,
-.social-media a:hover {
+.footer-nav .nav-link:hover {
     color: var(--pumpkin);
 }
 
-.footer ul li a:hover {
+.footer a i:hover {
+    color: var(--pumpkin);
+}
+.footer a i:hover {
     text-decoration: none;
-}
-
-.footer ul li a {
-    color: var(--white);
-}
-
-.social-media a {
-    color: var(--timberwolf);
 }
 
 /* thematic break*/
