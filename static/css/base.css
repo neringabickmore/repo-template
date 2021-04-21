@@ -15,6 +15,7 @@
     --jet: #333533;
     --platinum: #E5E5E5;
     --champagne: #FCD48F;
+    --l-cyan: #cdedf6;
 
     /* box shadows */
     --dark-large-box-shadow: 6px 6px 12px var(--jet);
@@ -126,7 +127,7 @@ p {
 .nav-link-header:hover,
 .dropdown-menu-header li a:focus,
 .dropdown-menu-header li a:hover {
-    color: var(--yellow);
+    color: var(--orange);
     text-decoration: none;
 }
 
