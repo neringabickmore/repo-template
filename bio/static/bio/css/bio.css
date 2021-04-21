@@ -1,6 +1,20 @@
+#bio-container .row {
+    box-shadow: var(--dark-small-box-shadow);
+}
+
+#bio-container p,
+#bio-container h3 {
+    text-align: center;
+}
+
 #about-row {
     background-color: var(--champagne);
-    box-shadow: var(--dark-small-box-shadow);
+}
+
+#shows-row,
+#celebrities-row,
+#tv-row {
+    background-color: var(--l-cyan);
 }
 
 .media img {
