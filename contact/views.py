@@ -1,5 +1,4 @@
-from django.shortcuts import render, redirect, reverse
-
+from django.shortcuts import render, redirect
 from django.core.mail import send_mail, BadHeaderError
 from django.conf import settings
 from django.http import HttpResponse
@@ -25,7 +24,7 @@ def contact(request):
                     [settings.DEFAULT_FROM_EMAIL],
                     fail_silently=False
                 )
-                return redirect('contact')
+                return redirect('message_sent')
             except BadHeaderError:
                 return HttpResponse('Invalid header found.')
     else:
@@ -37,3 +36,11 @@ def contact(request):
     }
 
     return render(request, template, context)
+
+
+def message_sent(request):
+    """
+    A view to return message-sent page to let the user know\
+    the message was sent.
+    """
+    return render(request, 'contact/message-sent.html')

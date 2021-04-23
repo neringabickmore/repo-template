@@ -83,3 +83,10 @@
     -ms-transform: rotate(45deg);
     transform: rotate(45deg);
 }
+
+/* message-success */
+
+.contact-row {
+    background-color: var(--platinum);
+    box-shadow: var(--dark-small-box-shadow);
+}
