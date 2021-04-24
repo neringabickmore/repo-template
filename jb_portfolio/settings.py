@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'allauth.account',
     'bio',
     'contact',
+    'portfolio',
     # other
     'crispy_forms',
     'storages',
