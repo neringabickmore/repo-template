@@ -107,6 +107,7 @@ SITE_ID = 1
 if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
     DEFAULT_FROM_EMAIL = 'James@jamesbickmore.com'
+    O365_EMAIL = os.environ.get('O365_EMAIL')
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
     EMAIL_USE_TLS = True
