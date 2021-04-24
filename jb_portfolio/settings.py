@@ -47,6 +47,10 @@ INSTALLED_APPS = [
     'allauth',
     'allauth.account',
     'bio',
+    'contact',
+    # other
+    'crispy_forms',
+    'storages',
 ]
 
 MIDDLEWARE = [
@@ -79,6 +83,10 @@ TEMPLATES = [
                 'django.contrib.messages.context_processors.messages',
                 'django.template.context_processors.media',
             ],
+            'builtins': [
+                'crispy_forms.templatetags.crispy_forms_tags',
+                'crispy_forms.templatetags.crispy_forms_field',
+            ],
         },
     },
 ]
@@ -103,10 +111,10 @@ else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
     EMAIL_USE_TLS = True
     EMAIL_PORT = 587
-    EMAIL_HOST = os.environ.get('EMAIL_HOST')
-    EMAIL_HOST_USER = os.environ.get('EMAIL_HOST_USER')
-    EMAIL_HOST_PASSWORD = os.environ.get('EMAIL_HOST_PASS')
-    DEFAULT_FROM_EMAIL = os.environ.get('EMAIL_HOST_USER')
+    EMAIL_HOST = os.environ.get('GMAIL_HOST')
+    EMAIL_HOST_USER = os.environ.get('GMAIL_USER')
+    EMAIL_HOST_PASSWORD = os.environ.get('GMAIL_APP_PASS')
+    O365_EMAIL = os.environ.get('O365_EMAIL')
 
 
 # Account set up

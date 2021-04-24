@@ -1,0 +1,92 @@
+#contact-form {
+    background-color: var(--jet);
+    padding: 3rem;
+    -webkit-box-shadow: var(--dark-small-box-shadow);
+    box-shadow: var(--dark-small-box-shadow);
+}
+
+#contact-form label,
+.form-text,
+#contact-form small {
+    color: var(--white) !important;
+}
+
+#contact-form input,
+#contact-form textarea,
+#contact-form div {
+    font-family: var(--main-font);
+    font-size: calc(1.4rem + .2vw);
+    color: var(--black);
+    border-color: var(--jet);
+    border-radius: 0;
+}
+
+#contact-form .btn {
+    background-color: var(--red);
+    color: var(--white);
+    -webkit-box-shadow: var(--dark-small-box-shadow);
+    box-shadow: var(--dark-small-box-shadow);
+}
+
+#contact-form .btn:hover {
+    background-color: var(--yellow);
+}
+
+#div_id_email {
+    margin-bottom: 0;
+}
+
+#div_id_message {
+    margin-top: 1rem;
+}
+
+/* checkbox custom style */
+
+.form-check {
+    position: relative;
+    z-index: 1;
+    display: block;
+    min-height: 1.5rem;
+    padding-left: 1.5rem;
+    -webkit-print-color-adjust: exact;
+}
+
+.checkmark {
+    position: absolute;
+    left: 0;
+    top: .4em;
+    width: 1.5rem;
+    height: 1.5rem;
+    border: 2px solid var(--white);
+    background-color: var(--white);
+}
+
+/** hide default checkbox **/
+.form-check input {
+    opacity: 0;
+}
+
+.checkmark:after {
+    content: "";
+    position: absolute;
+    display: none;
+}
+
+.form-check .checkmark:after {
+    bottom: .2rem;
+    left: .4rem;
+    width: .5rem;
+    height: 1rem;
+    border: solid var(--red);
+    border-width: 0 3px 3px 0;
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+/* message-success */
+
+.contact-row {
+    background-color: var(--platinum);
+    box-shadow: var(--dark-small-box-shadow);
+}
