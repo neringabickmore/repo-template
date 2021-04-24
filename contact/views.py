@@ -1,4 +1,4 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, reverse
 from django.core.mail import send_mail, BadHeaderError
 from django.conf import settings
 from django.http import HttpResponse
@@ -21,7 +21,7 @@ def contact(request):
                     f"Message from {full_name}, <{user_email}>",
                     message,
                     user_email,
-                    [settings.DEFAULT_FROM_EMAIL],
+                    [settings.O365_EMAIL],
                     fail_silently=False
                 )
                 return redirect('message_sent')
