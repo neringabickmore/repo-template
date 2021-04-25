@@ -1,4 +1,6 @@
 {% extends 'portfolio-base.html' %}
+
+{% load cloudinary %}
 {% load static %}
 
 {% block extra_css %}
@@ -10,12 +12,20 @@
     <!-- Contact form -->
     <div class="row no-gutters align-items-center py-5 px-3 mt-sm-5 mt-0" id="portfolio-row">
         <div class="col-sm-12 px-4">
-            <h1>portfolio</h1>
-            {% for photo in photos %}
-            <img src="{{ photo.image.url }}" alt="{{photo.title}}" style="width: 150px">
-            <h3>{{ photo.title }}</h3>
-            <h4>{{ photo.date_time }}</h4>
-            {% endfor %}
+            <h1>upload picture</h1>
+            <form method="post" action="{% url 'upload_photo' %}" class="form mb-2" enctype="multipart/form-data">
+                {% csrf_token %}
+
+                {{ form.image }}
+                {{ form.title}}
+                {{ form.friendly_title }}
+
+
+                <div>
+                    <input type="submit" value="Upload Image">
+                </div>
+            </form>
+            
         </div>
     </div>
 </div>
