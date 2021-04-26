@@ -361,9 +361,35 @@ p {
     display: block;
 }
 
+/* All forms on the site */
+.form-control:focus {
+    -webkit-box-shadow: var(--dark-small-box-shadow) !important;
+    box-shadow: var(--dark-small-box-shadow) !important;
+}
+
+/* Photo Upload styling in Forms */
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-file input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+#filename,
+.custom-control-label {
+    color: var(--orange);
+}
+
 @media (max-width: 574px) {
 
-    .btn,
     .allauth-form-inner-content input,
     .dropdown-menu-header li a,
     .nav-link-header {

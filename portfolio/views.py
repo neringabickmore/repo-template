@@ -1,14 +1,15 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, get_object_or_404, reverse, redirect
 from django.contrib import messages
 
 import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 
+from cloudinary.forms import cl_init_js_callbacks
+
 from .models import Photo
 from .forms import PhotoForm
 
-from cloudinary.forms import cl_init_js_callbacks
 
 def portfolio(request):
     """ A view to show all portfolio items"""
@@ -17,25 +18,26 @@ def portfolio(request):
     context = {
         'photos': photos
     }
-    path = 'portfolio/portfolio.html'
+    template = 'portfolio/portfolio.html'
 
-    return render(request, path, context)
+    return render(request, template, context)
 
 
 def upload_photo(request):
     if request.method == 'POST':
-        form = PhotoForm(request.POST, request.FILES)
-        if form.is_valid():
-            form.save()
+        upload_form = PhotoForm(request.POST, request.FILES)
+        if upload_form.is_valid():
+            upload_form.save()
             messages.success(request, 'Successfully added product!')
             return redirect('portfolio')
         else:
             messages.error(request, 'Failed to add product. Please ensure the form is valid.') 
 
     else:
-        form = PhotoForm()
+        upload_form = PhotoForm()
 
+    template = 'portfolio/upload-photo.html'
     context = {
-        'form': form
+        'upload_form': upload_form
     }
-    return render(request, 'portfolio/upload-photo.html', context)
+    return render(request, template, context)

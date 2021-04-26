@@ -9,23 +9,20 @@
 
 {% block content %}
 <div class="container mb-5 body-container" id="portfolio-container">
-    <!-- Contact form -->
+    <!-- Photo upload form -->
     <div class="row no-gutters align-items-center py-5 px-3 mt-sm-5 mt-0" id="portfolio-row">
-        <div class="col-sm-12 px-4">
+        <div class="col-sm-8 px-4">
             <h1>upload picture</h1>
             <form method="post" action="{% url 'upload_photo' %}" class="form mb-2" enctype="multipart/form-data">
                 {% csrf_token %}
-
-                {{ form.image }}
-                {{ form.title}}
-                {{ form.friendly_title }}
-
-
-                <div>
-                    <input type="submit" value="Upload Image">
-                </div>
+                {% for field in upload_form %}
+                    {% if field.name != 'image' %}
+                        {{ field | as_crispy_field }}
+                    {% else %}
+                        {{ field }}
+                    {% endif %}
+                {% endfor %}
             </form>
-            
         </div>
     </div>
 </div>

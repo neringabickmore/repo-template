@@ -45,3 +45,19 @@ body,
 .footer-link {
     color: var(--black);
 }
+
+/* upload form styling */
+.field-styling {
+    border-radius: 0;
+    border: 1px solid var(--white);
+    font-size: 1.6rem;
+}
+.btn {
+    background-color: var(--yellow);
+    color: var(--black);
+}
+
+.btn:hover {
+    background-color: var(--orange);
+    color: var(--black);
+}
