@@ -14,7 +14,7 @@ class Photo (models.Model) :
     title = models.CharField("Title", max_length=200)
     friendly_title = models.CharField("Friendly Title", max_length=200)
     date_time = models.DateTimeField(auto_now_add=True)
-    image = CloudinaryField('image', blank=False)
+    image = models.ImageField(upload_to= 'media/', blank=False)
 
     sort = ('date_time')
 
