@@ -110,7 +110,7 @@ SITE_ID = 1
 # Email set up
 if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-    DEFAULT_FROM_EMAIL = 'James@jamesbickmore.com'
+    EMAIL_HOST_USER = os.environ.get('GMAIL_USER')
     O365_EMAIL = os.environ.get('O365_EMAIL')
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
