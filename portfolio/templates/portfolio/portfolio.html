@@ -9,14 +9,37 @@
 <div class="container mb-5 body-container" id="portfolio-container">
     <!-- Contact form -->
     <div class="row no-gutters align-items-center py-5 px-3 mt-sm-5 mt-0" id="portfolio-row">
-        <div class="col-sm-12 px-4">
-            <h1>portfolio</h1>
-            {% for photo in photos %}
-            <img src="{{ photo.image.url }}" alt="{{photo.title}}" style="width: 150px">
-            <h3>{{ photo.title }}</h3>
-            <h4>{{ photo.date_time }}</h4>
-            {% endfor %}
+        <div class="col-sm-12">
+            <h1 class="header" id="myHeader">portfolio</h1>
+            <!-- main photo view selector -->
+            <div class="text-center d-none d-sm-block">
+                <button class="btnTwo btn active" title="2 photos per row">2</button>
+                <button class="btnThree btn" title="3 photos per row">3</button>
+                <button class="btnFour btn" title="4 photos per row">4</button>
+            </div>
+            <!-- mobile photo view selector-->
+            <div class="text-center d-block d-sm-none">
+                <button class="btnOne btn">1</button>
+                <button class="btnTwo btn active">2</button>
+            </div>
         </div>
     </div>
+    <!-- photos -->
+    <div class="row px-3" id="photoGridRow">
+        {% for photo in photos %}
+        <div class="col-6 py-4 photoGrid photo-container">
+            <img src="{{ photo.image.url }}" alt="{{ photo.title }}" class="photo">
+            <!-- overlay on hover -->
+            <div class="photo-overlay">
+                <h3 class="title">{{ photo.friendly_title }}</h3>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
 </div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script src="{% static 'portfolio/js/portfolio.js' %}"></script>
 {% endblock %}
