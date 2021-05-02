@@ -1,45 +1,36 @@
-
 /**
  * Global Event listeners
  */
- $(".btnOne").click(function () {
-    $('.btnOne').addClass('active');
-    $('.btnTwo').removeClass('active');
+$(".btnOne").click(function () {
+    $('button.active').removeClass('active')
+    $(this).addClass('active')
     photoGridOne();
 });
 
 $(".btnTwo").click(function () {
-    $('.btnTwo').addClass('active')
-    $('.btnOne').removeClass('active')
-    $('.btnThree').removeClass('active')
-    $('.btnFour').removeClass('active')
+    $('button.active').removeClass('active')
+    $(this).addClass('active')
     photoGridTwo();
 });
 
 $(".btnThree").click(function () {
-    $('.btnThree').addClass('active')
-    $('.btnOne').removeClass('active')
-    $('.btnTwo').removeClass('active')
-    $('.btnFour').removeClass('active')
+    $('button.active').removeClass('active')
+    $(this).addClass('active')
     photoGridThree();
 });
 
 $(".btnFour").click(function () {
-    $('.btnFour').addClass('active')
-    $('.btnOne').removeClass('active')
-    $('.btnTwo').removeClass('active')
-    $('.btnThree').removeClass('active')
+    $('button.active').removeClass('active')
+    $(this).addClass('active')
     photoGridFour();
 });
-
 
 /**
  * function to enable the view of one photo per column
  * on small screens, else two
  */
- const photoGridOne = () => {
-    $('#photoGridRow>div.photoGrid').addClass(['col-12', 'col-sm-6'])
-    $('#photoGridRow>div.photoGrid').removeClass('col-6')
+const photoGridOne = () => {
+    $('#photoGridRow>div.photoGrid').addClass(['col-12', 'col-sm-6']).removeClass('col-6')
 };
 
 /**
@@ -47,8 +38,7 @@ $(".btnFour").click(function () {
  * on screens larger than small, else two.
  */
 const photoGridThree = () => {
-    $('#photoGridRow>div.photoGrid').addClass(['col-sm-4', 'col-6'])
-    $('#photoGridRow>div.photoGrid').removeClass(['col-sm-3', 'col-sm-6'])
+    $('#photoGridRow>div.photoGrid').addClass(['col-sm-4', 'col-6']).removeClass(['col-sm-3', 'col-sm-6', 'col-12'])
 };
 
 /**
@@ -57,8 +47,7 @@ const photoGridThree = () => {
  */
 
 const photoGridTwo = () => {
-    $('#photoGridRow>div.photoGrid').addClass(['col-sm-6', 'col-6'])
-    $('#photoGridRow>div.photoGrid').removeClass(['col-sm-3', 'col-sm-4', 'col-12'])
+    $('#photoGridRow>div.photoGrid').addClass(['col-sm-6', 'col-6']).removeClass(['col-sm-3', 'col-sm-4', 'col-12'])
 };
 
 /**
@@ -66,6 +55,5 @@ const photoGridTwo = () => {
  * on screens larger than small, else two
  */
 const photoGridFour = () => {
-    $('#photoGridRow>div.photoGrid').addClass(['col-sm-3', 'col-6'])
-    $('#photoGridRow>div.photoGrid').removeClass(['col-sm-4', 'col-sm-6', 'col-12'])
+    $('#photoGridRow>div.photoGrid').addClass(['col-sm-3', 'col-6']).removeClass(['col-sm-4', 'col-sm-6', 'col-12'])
 };
