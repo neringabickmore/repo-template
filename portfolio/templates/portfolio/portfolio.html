@@ -27,13 +27,19 @@
     <!-- photos -->
     <div class="row px-3" id="photoGridRow">
         {% for photo in photos %}
-        <div class="col-6 py-4 photoGrid photo-container">
-            <img src="{{ photo.image.url }}" alt="{{ photo.title }}" class="photo">
-            <!-- overlay on hover -->
-            <div class="photo-overlay">
-                <h3 class="title">{{ photo.friendly_title }}</h3>
-            </div>
+        <div class="col-6 px-2 py-2 photoGrid photo-container align-self-center">
+            <a href="" title="close up" aria-label="view details" id="close-up-photo-{{ photo.title }}"
+                data-toggle="modal" data-target="#close-up-modal-{{ photo.title }}">
+                <img src="{{ photo.image.url }}" alt="{{ photo.title }}" class="photo">
+                <!-- overlay on hover -->
+                <div class="photo-overlay">
+                    <h3 class="title">{{ photo.friendly_title }}</h3>
+                </div>
+            </a>
+            <!-- Photo close-up modal -->
+            {% include 'portfolio/includes/close-up-modal.html' %}
         </div>
+
         {% endfor %}
     </div>
 </div>

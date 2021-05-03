@@ -100,6 +100,9 @@ body,
     padding: 16px 32px;
 }
 
+a:hover, a {
+    color: var(--white);
+}
 /* Style the buttons */
 .btn {
     border: none;
@@ -120,4 +123,26 @@ body,
     background-color: var(--jet);
     color: var(--white);
     border: 1px var(--white) solid;
+}
+
+/* Photo clos-eup modal */
+.modal-content {
+    background-color: var(--jet);
+    color: var(--white);
+    padding: 1rem;
+}
+
+.modal-content img {
+    opacity: 1 !important;
+    -ms-grid-column-align: center;
+    justify-self: center;
+}
+
+.close {
+    opacity: 1;
+    text-shadow: none;
+}
+
+.fa-times {
+    color: var(--orange);
 }
