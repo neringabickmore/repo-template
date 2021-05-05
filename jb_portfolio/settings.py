@@ -42,12 +42,16 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
+    # cloudinary
     'django.contrib.staticfiles',
+    'cloudinary_storage',
+    'cloudinary',
     'django.contrib.sites',
     'allauth',
     'allauth.account',
     'bio',
     'contact',
+    'portfolio',
     # other
     'crispy_forms',
     'storages',
@@ -106,7 +110,8 @@ SITE_ID = 1
 # Email set up
 if DEBUG:
     EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
-    DEFAULT_FROM_EMAIL = 'James@jamesbickmore.com'
+    EMAIL_HOST_USER = os.environ.get('GMAIL_USER')
+    O365_EMAIL = os.environ.get('O365_EMAIL')
 else:
     EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
     EMAIL_USE_TLS = True
@@ -182,6 +187,12 @@ STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 MEDIA_URL = '/media/'
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
+
+if 'USE_CLOUDINARY' in os.environ:
+    CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL')
+    MEDIA_URL = '/media/'
+    DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+    
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field
 

@@ -1,13 +1,13 @@
-<!-- Bio -->
-<li class="nav-item">
-    <a class="nav-link-header" href="/">
-        Bio
-    </a>
-</li>
 <!-- Portfolio -->
 <li class="nav-item">
-    <a class="nav-link-header" href="">
+    <a class="nav-link-header" href="/">
         Portfolio
+    </a>
+</li>
+<!-- Bio -->
+<li class="nav-item">
+    <a class="nav-link-header" href="/bio/">
+        Bio
     </a>
 </li>
 <!-- contact -->
@@ -16,3 +16,18 @@
         Contact
     </a>
 </li>
+{% if user.is_superuser %}
+<!-- Superuser management options -->
+<li class="nav-item dropdown">
+    <a class="nav-link-header" role="button" id="managementDropdown" data-toggle="dropdown" aria-haspopup="true"
+        aria-expanded="false">
+        Management
+    </a>
+    <ul class="dropdown-menu-header dropdown-menu border-0" aria-labelledby="managementDropdown">
+        <!--add picture -->
+        <li><a href="{% url 'upload_photo' %}" class="dropdown-item ">Add photo</a></li>
+        <!-- logout-->
+        <li><a href="/accounts/logout" class="dropdown-item ">Logout</a></li>
+        
+    </ul>
+{% endif %}

@@ -1,0 +1,51 @@
+{% extends 'portfolio-base.html' %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'portfolio/css/portfolio.css' %}" type="text/css">
+{% endblock %}
+
+{% block content %}
+<div class="container mb-5 body-container" id="portfolio-container">
+    <!-- Contact form -->
+    <div class="row no-gutters align-items-center py-5 px-3 mt-sm-5 mt-0" id="portfolio-row">
+        <div class="col-sm-12">
+            <h1 class="header" id="myHeader">portfolio</h1>
+            <!-- main photo view selector -->
+            <div class="text-center d-none d-sm-block">
+                <button class="btnTwo btn active" title="2 photos per row">2</button>
+                <button class="btnThree btn" title="3 photos per row">3</button>
+                <button class="btnFour btn" title="4 photos per row">4</button>
+            </div>
+            <!-- mobile photo view selector-->
+            <div class="text-center d-block d-sm-none">
+                <button class="btnOne btn">1</button>
+                <button class="btnTwo btn active">2</button>
+            </div>
+        </div>
+    </div>
+    <!-- photos -->
+    <div class="row px-3" id="photoGridRow">
+        {% for photo in photos %}
+        <div class="col-6 px-2 py-2 photoGrid photo-container align-self-center">
+            <a href="" title="close up" aria-label="view details" id="close-up-photo-{{ photo.title }}"
+                data-toggle="modal" data-target="#close-up-modal-{{ photo.title }}">
+                <img src="{{ photo.image.url }}" alt="{{ photo.title }}" class="photo">
+                <!-- overlay on hover -->
+                <div class="photo-overlay">
+                    <h3 class="title">{{ photo.friendly_title }}</h3>
+                </div>
+            </a>
+            <!-- Photo close-up modal -->
+            {% include 'portfolio/includes/close-up-modal.html' %}
+        </div>
+
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
+
+{% block postloadjs %}
+{{ block.super }}
+<script src="{% static 'portfolio/js/portfolio.js' %}"></script>
+{% endblock %}

@@ -22,7 +22,7 @@
 <body>
     {% include 'includes/loader.html' %}
     <!-- header -->
-    {% include 'includes/layout/header.html' %}
+    {% include 'includes/layout/portfolio-header.html' %}
     <!-- extra header -->
     {% block extra_header %}
     {% endblock %}
@@ -49,7 +49,7 @@
     {% endif %}
     {% block content %}
     {% endblock %}
-    {% include 'includes/layout/footer.html' %}
+    {% include 'includes/layout/portfolio-footer.html' %}
     <!-- postload JS -->
     {% block postloadjs %}
     {% include 'includes/postload-scripts/scripts.html' %}

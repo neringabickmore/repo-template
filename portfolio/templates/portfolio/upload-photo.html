@@ -1,0 +1,29 @@
+{% extends 'portfolio-base.html' %}
+
+{% load cloudinary %}
+{% load static %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'portfolio/css/portfolio.css' %}" type="text/css">
+{% endblock %}
+
+{% block content %}
+<div class="container mb-5 body-container" id="portfolio-container">
+    <!-- Photo upload form -->
+    <div class="row no-gutters align-items-center py-5 px-3 mt-sm-5 mt-0" id="portfolio-row">
+        <div class="col-sm-8 px-4">
+            <h1>upload picture</h1>
+            <form method="post" action="{% url 'upload_photo' %}" class="form mb-2" enctype="multipart/form-data">
+                {% csrf_token %}
+                {% for field in upload_form %}
+                    {% if field.name != 'image' %}
+                        {{ field | as_crispy_field }}
+                    {% else %}
+                        {{ field }}
+                    {% endif %}
+                {% endfor %}
+            </form>
+        </div>
+    </div>
+</div>
+{% endblock %}

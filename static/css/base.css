@@ -127,8 +127,13 @@ p {
 .nav-link-header:hover,
 .dropdown-menu-header li a:focus,
 .dropdown-menu-header li a:hover {
-    color: var(--orange);
+    color: var(--orange)!important;
     text-decoration: none;
+}
+
+.fa-grip-lines {
+    color: var(--black);
+    font-size: 2rem;
 }
 
 /* body */
@@ -227,7 +232,7 @@ p {
 
 .verified,
 .primary {
-    color: var(--yellow);
+    color: var(--white);
     font-weight: bolder;
 }
 
@@ -237,12 +242,10 @@ p {
 }
 
 .login a {
-    color: var(--yellow);
-    font-weight: 900;
+    color: var(--white);
 }
 
 .login a:hover {
-    color: var(--yellow);
     text-decoration: none;
 }
 
@@ -356,9 +359,74 @@ p {
     display: block;
 }
 
+/* All forms on the site */
+.form-control:focus {
+    -webkit-box-shadow: var(--dark-small-box-shadow) !important;
+    box-shadow: var(--dark-small-box-shadow) !important;
+}
+
+/* Photo Upload styling in Forms */
+.btn-file {
+    position: relative;
+    overflow: hidden;
+}
+
+.btn-file input[type="file"] {
+    position: absolute;
+    top: 0;
+    right: 0;
+    min-width: 100%;
+    min-height: 100%;
+    opacity: 0;
+    cursor: pointer;
+}
+
+#filename,
+.custom-control-label {
+    color: var(--orange);
+}
+
+/* Bootstrap toasts */
+
+.message-container {
+    position: fixed;
+    top: 200px;
+    right: 18px;
+    z-index: 99999999999;
+}
+.toast-body {
+    background-color: var(--jet);
+    font-size: 1.4rem;
+}
+.toast-header {
+    font-size: 1.2rem;
+}
+.custom-toast {
+    overflow: visible;
+    opacity: 1;
+}
+
+.toast-capper {
+    height: 2px;
+}
+
+.bg-success {
+    background-color: var(--yellow)!important;
+}
+.bg-danger {
+    background-color: var(--red)!important;
+}
+
+.bg-warning {
+    background-color: var(--pumpkin)!important;
+}
+
+.bg-info {
+    background-color: var(--l-cyan)!important;
+}
+
 @media (max-width: 574px) {
 
-    .btn,
     .allauth-form-inner-content input,
     .dropdown-menu-header li a,
     .nav-link-header {
