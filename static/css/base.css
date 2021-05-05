@@ -232,7 +232,7 @@ p {
 
 .verified,
 .primary {
-    color: var(--yellow);
+    color: var(--white);
     font-weight: bolder;
 }
 
@@ -242,12 +242,10 @@ p {
 }
 
 .login a {
-    color: var(--yellow);
-    font-weight: 900;
+    color: var(--white);
 }
 
 .login a:hover {
-    color: var(--yellow);
     text-decoration: none;
 }
 
