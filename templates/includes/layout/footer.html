@@ -3,25 +3,12 @@
         <!-- quicklinks -->
         <div class="col-sm-4 text-center">
             <h4>quicklinks</h4>
-            <!-- <hr class="hr-style"> -->
-            <div class="nav footer-nav flex-column pb-2">
-                <a class="nav-link footer-link py-1" href='/bio/'>Bio</a>
-                <a class="nav-link footer-link py-1" href='/'>Portfolio</a>
-                <a class="nav-link footer-link py-1" href='/contact/'>Contact</a>
-            </div>
+            {% include 'includes/layout/footer-includes/quicklinks.html' %}
         </div>
         <!-- social links -->
-        <div class="col-sm-4 text-center social-media">
-            <a href="" rel="noopener noreferrer" target="_blank" aria-label="Find us on Instagram">
-                <i class="p-2 fab fa-instagram" aria-hidden="true"></i>
-            </a>
-        </div>
+        {% include 'includes/layout/footer-includes/social-links.html' %}
         <!-- contact -->
-        <div class="col-sm-4 text-center footer-contact-info">
-            <h4>Contact</h4>
-            <p class="text-center">james@jamesbickmore.com</p>
-            <p class="text-center">07984 051416</p>
-        </div>
+        {% include 'includes/layout/footer-includes/contact.html' %}
     </div>
     <!-- copyright -->
     <div class="row no-gutters mt-3">
