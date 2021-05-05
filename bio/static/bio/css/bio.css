@@ -8,13 +8,14 @@
 }
 
 #about-row {
-    background-color: var(--champagne);
+    background-color: var(--jet);
+    color: var(--white);
 }
 
 #shows-row,
 #celebrities-row,
 #tv-row {
-    background-color: var(--l-cyan);
+    background-color: var(--platinum);
 }
 
 .media img {
