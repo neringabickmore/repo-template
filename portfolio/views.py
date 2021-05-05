@@ -27,20 +27,17 @@ def portfolio(request):
 def upload_photo(request):
 
     if not request.user.is_superuser:
-        sweetify.sweetalert(
-            request, title='error', icon='error',
-            text="This functionality is available to admin only.",
-            timer=2000)
+        messages.error(request, 'Functionality available to the site owner only.')
         return redirect(reverse('portfolio'))
 
     if request.method == 'POST':
         upload_form = PhotoForm(request.POST, request.FILES)
         if upload_form.is_valid():
             upload_form.save()
-            messages.success(request, 'Successfully added product!')
+            messages.success(request, 'Successfully added a new photo!')
             return redirect('portfolio')
         else:
-            messages.error(request, 'Failed to add product. Please ensure the form is valid.') 
+            messages.error(request, 'Failed to add a photo. Please ensure the form is valid.') 
 
     else:
         upload_form = PhotoForm()

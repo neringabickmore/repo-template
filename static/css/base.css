@@ -386,6 +386,45 @@ p {
     color: var(--orange);
 }
 
+/* Bootstrap toasts */
+
+.message-container {
+    position: fixed;
+    top: 200px;
+    right: 18px;
+    z-index: 99999999999;
+}
+.toast-body {
+    background-color: var(--jet);
+    font-size: 1.4rem;
+}
+.toast-header {
+    font-size: 1.2rem;
+}
+.custom-toast {
+    overflow: visible;
+    opacity: 1;
+}
+
+.toast-capper {
+    height: 2px;
+}
+
+.bg-success {
+    background-color: var(--yellow)!important;
+}
+.bg-danger {
+    background-color: var(--red)!important;
+}
+
+.bg-warning {
+    background-color: var(--pumpkin)!important;
+}
+
+.bg-info {
+    background-color: var(--l-cyan)!important;
+}
+
 @media (max-width: 574px) {
 
     .allauth-form-inner-content input,
