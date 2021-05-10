@@ -32,9 +32,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = 'DEVELOPMENT' in os.environ
 
 if DEBUG:
-    ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'jamesbickmore.herokuapp.com']
+    ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'jamesbickmore.herokuapp.com', 'jamesbickmore.com']
 else:
-    ALLOWED_HOSTS = ['jamesbickmore.herokuapp.com']
+    ALLOWED_HOSTS = ['jamesbickmore.herokuapp.com', 'jamesbickmore.com']
 
 
 # Application definition
@@ -68,6 +68,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'whitenoise.middleware.WhiteNoiseMiddleware',
 ]
 
 ROOT_URLCONF = 'jb_portfolio.urls'
@@ -144,7 +145,7 @@ DATABASES = {
         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
     }
 
-
+# USE BELOW CODE IF sqlite IS USED IN DEVELOPMENT MODE
 # if 'DATABASE_URL' in os.environ:
 #     DATABASES = {
 #         'default': dj_database_url.parse(os.environ.get('DATABASE_URL'))
@@ -193,6 +194,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
+
 STATIC_URL = '/static/'
 STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
 
@@ -201,12 +203,19 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 if 'USE_CLOUDINARY' in os.environ:
-    CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL')
-    MEDIA_URL = '/media/'
+    # media files
     DEFAULT_FILE_STORAGE = 'cloudinary_storage.storage.MediaCloudinaryStorage'
+    CLOUDINARY_URL = os.environ.get('CLOUDINARY_URL')
 
+    CLOUDINARY_DOMAIN_NAME = os.environ.get('CLOUDINARY_DOMAIN_NAME')
+    MEDIA_URL = f'https://{CLOUDINARY_DOMAIN_NAME}/'
+
+    # static files
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
     STATIC_URL = '/static/'
     STATICFILES_DIRS = (os.path.join(BASE_DIR, 'static'),)
+    STATICFILES_STORAGE = 'whitenoise.storage.CompressedManifestStaticFilesStorage'
+
     
 # Default primary key field type
 # https://docs.djangoproject.com/en/3.2/ref/settings/#default-auto-field

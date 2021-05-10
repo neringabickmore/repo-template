@@ -261,7 +261,7 @@ p {
 }
 
 .loader {
-    background-image: url("/media/loader/loader.gif");
+    background-image: url("https://res.cloudinary.com/hwbrfij25/image/upload/v1620489503/loader/loader.gif"); 
     background-repeat: no-repeat;
     background-position: center;
     height: 100%;
