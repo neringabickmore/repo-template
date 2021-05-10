@@ -1,4 +1,4 @@
-<div class="modal fade pr-0" id="close-up-modal-{{ photo.title }}" tabindex="-1" aria-labelledby="close-up-label" aria-hidden="true">
+<div class="modal fade pr-0" id="close-up-modal-{{ photo.title }}" tabindex="-1" aria-labelledby="close-up-label-{{photo.title}}" aria-hidden="true">
     <div class="modal-dialog modal-xl">
         <div class="modal-content">
             <!-- close button -->
@@ -6,7 +6,7 @@
                 <span aria-hidden="true"><i class="fas fa-times"></i></span>
             </button>
             <!-- Room view image -->
-            <div class="text-center modal-body" id="close-up-label">
+            <div class="text-center modal-body" id="close-up-label-{{photo.title}}">
                 <img class="card-img-top"
                     src="{{ photo.image.url }}"
                     alt="{{ photo.title}}">
