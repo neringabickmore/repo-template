@@ -12,7 +12,7 @@ class PhotoAdmin(admin.ModelAdmin):
         'date_time',
     )
 
-    ordering = ('date_time',)
+    ordering = ('-date_time',)
 
 # Register your models here.
 admin.site.register(Photo, PhotoAdmin)
