@@ -32,9 +32,9 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = 'DEVELOPMENT' in os.environ
 
 if DEBUG:
-    ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'jamesbickmore.herokuapp.com']
+    ALLOWED_HOSTS = ['localhost', '127.0.0.1', 'jamesbickmore.herokuapp.com','jamesbickmore.com', 'jamesbickmore.co.uk']
 else:
-    ALLOWED_HOSTS = ['jamesbickmore.herokuapp.com']
+    ALLOWED_HOSTS = ['jamesbickmore.herokuapp.com', 'jamesbickmore.com', 'jamesbickmore.co.uk']
 
 
 # Application definition
