@@ -37,8 +37,7 @@
         <div class="col-sm-12 px-4">
             <h3><strong>shows</strong></h3>
             {% for shows in shows_section %}
-            <p> {{ shows.description }}
-            </p>
+            <p> {{ shows.description }} </p>
             {% endfor %}
         </div>
     </div>
@@ -46,75 +45,45 @@
     <div class="row no-gutters align-items-center py-5 px-3 mt-5" id="editorials-row">
         <div class="col-sm-12 px-4">
             <h3><strong>editorials</strong></h3>
-            <p>
-                Italian Vogue (online) |Emirates Woman | #Legend | Sunday Girl | Sickymag | Bricks |
-                Katblut | Hope Street | Lucy’s Magazine | Notion | Noctis | Zeummag | Outnet | ASOS |
-                Cosmopolitan | Fault | Commission | Eclectic | Glamour | M&amp;S (advertorial) |
-                Dazed [Assisted] | Garage [Assisted] | Wonderland [Assisted] | Ralph Lauren [Assisted] |
-                Danks magazine [Assisted] | Numero [Assisted] | Lula [Assisted] |
-                Vogue UK &amp; Italia [Assisted] | Harper’s Bazaar [Assisted] | Agent Provocateur [Assisted] |
-                Liu Jo [Assisted] | TK Maxx [Assisted] | Lumene [Assisted]
-            </p>
+            {% for editorials in editorials_section %}
+            <p> {{ editorials.description }} </p>
+            {% endfor %}
         </div>
     </div>
     <!-- Celebrities -->
     <div class="row no-gutters align-items-center py-5 px-3 mt-5" id="celebrities-row">
         <div class="col-sm-12 px-4">
             <h3><strong>celebrities</strong></h3>
-            <p>
-                Camilla Cabello | Becca Dudley | Sabrina Carpenter |
-                Au/Ra | Adrian Brody | Polina | Louisa Johnson |
-                Richard Thompson | Yusuf Slam (Cat Stevens) | Matt Terry |
-                Imani Williams | Fifth Harmony | Fleur East |
-                Ben Haenow | Jorgie Porter | Ashley Roberts |
-                Ola Jordan | Edith Bowmen | Rick Edwards
-            </p>
+            {% for celebrities in celebrities_section %}
+            <p> {{ celebrities.description }} </p>
+            {% endfor %}
         </div>
     </div>
     <!-- Music -->
     <div class="row no-gutters align-items-center py-5 px-3 mt-5" id="music-row">
         <div class="col-sm-12 px-4">
             <h3><strong>music</strong></h3>
-            <p>
-                Camila Cabello - Never Be The Same Tour |
-                Camila Cabello/Taylor Swift - Reputation Tour |
-                Summer Time Ball |
-                Jingle Bell Ball |
-                X Factor Tour 14-19 |
-                Fifth Harmony Reflection Tour |
-                Isle of White Festival |
-                Au/Ra (Emoji video) |
-                Polina: Contessa (video) |
-                Yusuf Islam (Cat Stevens; video)
-            </p>
+            {% for music in music_section %}
+            <p> {{ music.description }} </p>
+            {% endfor %}
         </div>
     </div>
     <!-- TV -->
     <div class="row no-gutters align-items-center py-5 px-3 mt-5" id="tv-row">
         <div class="col-sm-12 px-4">
             <h3><strong>tv</strong></h3>
-            <p>
-                Britain’s Got Talent | Top of the Pops | Celebrity Juice |
-                This Morning | Jonathan Ross | Loose Women |
-                Alan Carr | Live Lounge | Brits | Box TV |
-                Sunday Brunch | Jamie and Jimmy Friday Food Fight |
-                Sunday Night at The Palladium | 4music trending |
-                National Television Awards | European Music Awards 2015 |
-                Stand Up To Cancer | MTV | Glamour Awards | Sports Relief | X Factor
-            </p>
+            {% for  tv in tv_section %}
+            <p> {{ tv.description }} </p>
+            {% endfor %}
         </div>
     </div>
     <!-- Commercials -->
     <div class="row no-gutters align-items-center py-5 px-3 mt-5" id="commercials-row">
         <div class="col-sm-12 px-4">
             <h3><strong>commercials</strong></h3>
-            <p>
-                John Lewis and Partners SS19 Shoot | John Lewis and Partners – Festive Beauty |
-                John Lewis and Partners – Fashion | National Lottery |
-                Dita Eye Wear | Christian Roth Eye Wear | Pro-activ + (Jorgie Porter) |
-                Sheer Cover (Ashley Roberts) | Pro Active (Ola Jordan) |
-                Talk Talk (X Factor) 2014 &amp; 2015 | L’Oreal New Professional product launch
-            </p>
+            {% for commercials in commercials_section %}
+            <p> {{ commercials.description }} </p>
+            {% endfor %}
         </div>
     </div>
 </div>
