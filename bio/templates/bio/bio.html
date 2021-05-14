@@ -15,15 +15,9 @@
                     class="mr-3 d-sm-block d-none" alt="Profile picture">
                 <div class="media-body">
                     <h2 class="mt-0 pb-3 text-center text-sm-left"><strong>About James</strong> </h2>
-                    <p class="text-center text-sm-left">James is a first-class session artist. Not only has he styled
-                        hair for the
-                        likes of Italian Vogue and other high-end publications he has also travelled the world and
-                        worked his magic on celebrity artists such as Camilla Cabello. James can also be found working
-                        with noteworthy designers at fashion week and collaborating with industry experts creating
-                        fashion and editorial campaigns. He has a flair for precision cutting, which includes all types
-                        of male grooming and fashion-forward styling but specialises in beautiful and effortless
-                        finishes. James’s clients really can’t get enough of his professionalism and undeniable sense of
-                        taste and style.</p>
+                    {% for about in about_section %}
+                    <p class="text-center text-sm-left"> {{ about.description }}</p>
+                    {% endfor %}
                 </div>
             </div>
 
