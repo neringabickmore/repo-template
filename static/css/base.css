@@ -188,6 +188,10 @@ p {
     text-decoration: none;
 }
 
+#admin-link {
+    opacity: .5;
+}
+
 /* thematic break*/
 .hr-style {
     border: 1px solid var(--black);
