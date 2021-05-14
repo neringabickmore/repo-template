@@ -27,12 +27,9 @@
     <div class="row no-gutters align-items-center py-5 px-3 mt-5" id="assisted-row">
         <div class="col-sm-12 px-4">
             <h3><strong>assisted</strong></h3>
-            <p>
-                Sam McKnight | Malcolm Edwards | James Pecis | Gary Gill | Neil Moodie |
-                Holli Smith | James Rowe | Alex Brownsell | Johnathan De Francesco | Shiori Takahashi |
-                Jawara | Martin Cullen | Daniel Martin | Rudi Lewis | Cyndia Harvey | Maarit Niemela |
-                Tina Outen | Alfie Sackett | Phillipe Tholimet
-            </p>
+            {% for assisted in assisted_section %}
+            <p> {{ assisted.description }} </p>
+            {% endfor %}
         </div>
     </div>
     <!-- Shows -->
