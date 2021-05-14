@@ -36,27 +36,10 @@
     <div class="row no-gutters align-items-center py-5 px-3 mt-5" id="shows-row">
         <div class="col-sm-12 px-4">
             <h3><strong>shows</strong></h3>
-            <p>
-                Hermes AW18 Couture/AW19 Couture | Kenzo AW18/AW19 | Fendi AW19 Men’s |
-                Acne AW18/SS19/AW19 Men’s | DSquared AW19 Men’s | Ann Demeulemeester AW19 |
-                Vetements AW19 | Neil Barrett AW19 Men’s | Craig Green AW19 Men’s |
-                Han Kjobenhvn x Puma AW19 Men’s | Marine Rose SS19 Men’s |
-                Alex Mullins AW18/SS19/AW19 Men’s| Wooyoungmi AW18/AW19 Men’s |
-                OAMC AW18/AW19 Men’s | Liam Hodges AW18 Men’s | MSGM AW18 Men’s |
-                GMBH AW18 Men’s | Off-White AW18 Men’s | Art School AW18/SS19 Men’s |
-                Proenza AW18 Couture | D&amp;G Harrods Collection |
-                Ryan Lo SS18 | Halpern SS18 | Marco De Vincenzo SS18 |
-                Ermano Scervino SS18 |Trussardi SS18 | Carven SS18 |
-                Nina Ricci SS18 | Shiatzy Chen SS18 | Ben Sherman SS18 Men’s |
-                Katie Eary SS18 Men’s | John Smedley AW17 Men’s (Lead Stylist) |
-                Moschino AW17 Men’s | MSGN AW17 Men’s | Pal Zileri AW17 Men’s |
-                Gareth Pugh SS17 | Natasha Zinko SS17 | Nicholas Oakwell Couture SS17 |
-                Barbour SS17 Men’s | Wilson PK SS16 (Lead Stylist) | TNBP Clothing SS16 (Lead Stylist) |
-                Fashion in Motion Wales &amp; Bonner | Fashion in Motion |House of Holland | Roksanda Illinic SS15 |
-                Bobby Abley SS15 Men’s | John Smedley SS15 | X Factor Tour 14-19 (Lead Stylist) |
-                X Factor winners week 14/15 | Bugatti Show 2014 | Fashion In Motion: SIBLING AW14 | Christopher Raeburn
-                AW14
+            {% for shows in shows_section %}
+            <p> {{ shows.description }}
             </p>
+            {% endfor %}
         </div>
     </div>
     <!-- Editorials -->
