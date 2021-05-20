@@ -17,6 +17,15 @@
                     <h2 class="mt-0 pb-3 text-center text-sm-left"><strong>About James</strong> </h2>
                     {% for about in about_section %}
                     <p class="text-center text-sm-left"> {{ about.description }}</p>
+                    {% if request.user.is_superuser %}
+                    <!-- Edit button-->
+                    <div class="text-center text-sm-right">
+                        <a class="btn edit-btn my-2 col-12 col-sm-2" href="{% url 'edit_about' about.id %}">Edit<span
+                                class="icon p-2">
+                                <i class="far fa-edit" aria-hidden="true"></i>
+                            </span></a>
+                    </div>
+                    {% endif %}
                     {% endfor %}
                 </div>
             </div>
@@ -29,6 +38,14 @@
             <h3><strong>assisted</strong></h3>
             {% for assisted in assisted_section %}
             <p> {{ assisted.description }} </p>
+            {% if request.user.is_superuser %}
+            <!-- Edit button-->
+            <div class="text-center text-sm-right">
+                <a class="btn edit-btn my-2 col-12 col-sm-2" href="{% url 'edit_assisted' assisted.id %}">Edit<span class="icon p-2">
+                        <i class="far fa-edit" aria-hidden="true"></i>
+                    </span></a>
+            </div>
+            {% endif %}
             {% endfor %}
         </div>
     </div>
@@ -38,6 +55,14 @@
             <h3><strong>shows</strong></h3>
             {% for shows in shows_section %}
             <p> {{ shows.description }} </p>
+            {% if request.user.is_superuser %}
+            <!-- Edit  button-->
+            <div class="text-center text-sm-right">
+                <a class="btn edit-btn my-2 col-12 col-sm-2" href="{% url 'edit_shows' shows.id %}">Edit<span class="icon p-2">
+                        <i class="far fa-edit" aria-hidden="true"></i>
+                    </span></a>
+            </div>
+            {% endif %}
             {% endfor %}
         </div>
     </div>
@@ -47,6 +72,14 @@
             <h3><strong>editorials</strong></h3>
             {% for editorials in editorials_section %}
             <p> {{ editorials.description }} </p>
+            {% if request.user.is_superuser %}
+            <!-- Edit button-->
+            <div class="text-center text-sm-right">
+                <a class="btn edit-btn my-2 col-12 col-sm-2" href="{% url 'edit_editorials' editorials.id %}">Edit<span class="icon p-2">
+                        <i class="far fa-edit" aria-hidden="true"></i>
+                    </span></a>
+            </div>
+            {% endif %}
             {% endfor %}
         </div>
     </div>
@@ -56,6 +89,14 @@
             <h3><strong>celebrities</strong></h3>
             {% for celebrities in celebrities_section %}
             <p> {{ celebrities.description }} </p>
+            {% if request.user.is_superuser %}
+            <!-- Edit button-->
+            <div class="text-center text-sm-right">
+                <a class="btn edit-btn my-2 col-12 col-sm-2" href="{% url 'edit_celebrities' celebrities.id %}">Edit<span class="icon p-2">
+                        <i class="far fa-edit" aria-hidden="true"></i>
+                    </span></a>
+            </div>
+            {% endif %}
             {% endfor %}
         </div>
     </div>
@@ -65,6 +106,14 @@
             <h3><strong>music</strong></h3>
             {% for music in music_section %}
             <p> {{ music.description }} </p>
+            {% if request.user.is_superuser %}
+            <!-- Edit button-->
+            <div class="text-center text-sm-right">
+                <a class="btn edit-btn my-2 col-12 col-sm-2" href="{% url 'edit_music' music.id %}">Edit<span class="icon p-2">
+                        <i class="far fa-edit" aria-hidden="true"></i>
+                    </span></a>
+            </div>
+            {% endif %}
             {% endfor %}
         </div>
     </div>
@@ -74,6 +123,14 @@
             <h3><strong>tv</strong></h3>
             {% for  tv in tv_section %}
             <p> {{ tv.description }} </p>
+            {% if request.user.is_superuser %}
+            <!-- Edit button-->
+            <div class="text-center text-sm-right">
+                <a class="btn edit-btn my-2 col-12 col-sm-2" href="{% url 'edit_tv' tv.id %}">Edit<span class="icon p-2">
+                        <i class="far fa-edit" aria-hidden="true"></i>
+                    </span></a>
+            </div>
+            {% endif %}
             {% endfor %}
         </div>
     </div>
@@ -83,6 +140,14 @@
             <h3><strong>commercials</strong></h3>
             {% for commercials in commercials_section %}
             <p> {{ commercials.description }} </p>
+            {% if request.user.is_superuser %}
+            <!-- Edit button-->
+            <div class="text-center text-sm-right">
+                <a class="btn edit-btn my-2 col-12 col-sm-2" href="{% url 'edit_commercials' commercials.id %}">Edit<span class="icon p-2">
+                        <i class="far fa-edit" aria-hidden="true"></i>
+                    </span></a>
+            </div>
+            {% endif %}
             {% endfor %}
         </div>
     </div>
