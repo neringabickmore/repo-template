@@ -4,7 +4,7 @@ from django.contrib import messages
 
 from .models import About, Assisted, Shows, Editorials, Celebrities, Music, Tv, Commercials
 
-from .forms import AboutForm, AssistedForm, ShowsForm, EditorialsForm, CelebritiesForm, MusicForm
+from .forms import AboutForm, AssistedForm, ShowsForm, EditorialsForm, CelebritiesForm, MusicForm, TvForm, CommercialsForm
 
 
 def bio(request):
@@ -222,6 +222,70 @@ def edit_music(request, music_id):
     context = {
         'music_form': music_form,
         'music_section': music_section,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def edit_tv(request, tv_id):
+    """ Edit tv section  """
+
+    if not request.user.is_superuser:
+        messages.error(request, 'Functionality available to the site owner only.')
+        return redirect(reverse('bio'))
+
+    tv_section = get_object_or_404(Tv, pk=tv_id)
+    # tv social icons in a footer
+    
+    if request.method == 'POST':
+        tv_form = TvForm(request.POST, instance=tv_section)
+        if tv_form.is_valid():
+            tv_form.save()
+            messages.success(request, 'Section edited successfully!')
+            return redirect(reverse('bio'))
+        else:
+            messages.error(request, 'Hmmm... something went wrong!')
+    else:
+        tv_form = TvForm(instance=tv_section)
+        messages.info(request, 'You are editing tv section!')
+
+    template = 'bio/includes/edit-templates/edit-tv.html'
+    context = {
+        'tv_form': tv_form,
+        'tv_section': tv_section,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def edit_commercials(request, commercials_id):
+    """ Edit commercials section  """
+
+    if not request.user.is_superuser:
+        messages.error(request, 'Functionality available to the site owner only.')
+        return redirect(reverse('bio'))
+
+    commercials_section = get_object_or_404(Commercials, pk=commercials_id)
+    # commercials social icons in a footer
+    
+    if request.method == 'POST':
+        commercials_form = CommercialsForm(request.POST, instance=commercials_section)
+        if commercials_form.is_valid():
+            commercials_form.save()
+            messages.success(request, 'Section edited successfully!')
+            return redirect(reverse('bio'))
+        else:
+            messages.error(request, 'Hmmm... something went wrong!')
+    else:
+        commercials_form = CommercialsForm(instance=commercials_section)
+        messages.info(request, 'You are editing commercials section!')
+
+    template = 'bio/includes/edit-templates/edit-commercials.html'
+    context = {
+        'commercials_form': commercials_form,
+        'commercials_section': commercials_section,
     }
 
     return render(request, template, context)
