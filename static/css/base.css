@@ -203,6 +203,10 @@ p {
 }
 
 /* general button styling */
+.edit-btn {
+    background-color: var(--orange)!important;
+    box-shadow: var(--dark-small-box-shadow);
+}
 .btn {
     font-size: 1.6rem;
     text-transform: uppercase;
@@ -213,7 +217,7 @@ p {
 
 .btn:hover {
     color: var(--white);
-    background-color: var(--red);
+    background-color: var(--red)!important;
     -webkit-box-shadow: var(--dark-small-box-shadow);
     box-shadow: var(--dark-small-box-shadow);
 }
@@ -304,6 +308,12 @@ p {
 .form-control:focus {
     -webkit-box-shadow: var(--dark-small-box-shadow) !important;
     box-shadow: var(--dark-small-box-shadow) !important;
+}
+
+.field-styling {
+    border-radius: 0;
+    border: 1px solid var(--jet);
+    font-size: 1.6rem;
 }
 
 /* Image Upload styling in Forms */
