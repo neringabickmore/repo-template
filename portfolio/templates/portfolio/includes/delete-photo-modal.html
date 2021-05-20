@@ -1,0 +1,24 @@
+<div class="modal fade" id="delete-photo-{{ photo.id}}-button-modal" data-backdrop="static" data-keyboard="false" tabindex="-1"
+    aria-labelledby="delete-modal-label-{{photo.id}}" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <!-- close button -->
+            <button type="button" class="close text-right" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true"><i class="fas fa-times"></i></span>
+            </button>
+            <!-- Message -->
+            <div class="text-center modal-body">
+                <p id="delete-modal-label-{{photo.id}}" class="text-center"> Do you really want to delete this photo? </p>
+            </div>
+            <!-- Delete photo button-->
+            <a class="btn my-3 delete-btn" href="{% url 'delete_photo' photo.id %}" aria-label="delete photo">
+                Yes, delete <span class="icon p-2">
+                    <i class="fas fa-trash" aria-hidden="true"></i>
+                </span></a>
+            <!-- Go back button -->
+            <button type="button" class="btn cancel-delete-photo" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true" class="icon p-2"><i class="fas fa-chevron-left"></i></span>no, go back
+                </button>   
+        </div>
+    </div>
+</div>

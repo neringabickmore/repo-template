@@ -203,7 +203,7 @@ p {
 }
 
 /* general button styling */
-.edit-btn {
+.edit-btn, .cancel-btn {
     background-color: var(--orange)!important;
     box-shadow: var(--dark-small-box-shadow);
 }

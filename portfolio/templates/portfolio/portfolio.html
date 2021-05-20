@@ -30,7 +30,7 @@
         <div class="col-6 px-2 py-2 photoGrid photo-container align-self-center">
             <a href="" title="close up" aria-label="view details" id="close-up-photo-{{ photo.title }}"
                 data-toggle="modal" data-target="#close-up-modal-{{ photo.title }}">
-                <img src="{{ photo.image.url }}" alt="{{ photo.friendly_title }}" class="photo" loading="lazy"> 
+                <img src="{{ photo.image.url }}" alt="{{ photo.friendly_title }}" class="photo" loading="lazy">
                 <!-- overlay on hover -->
                 <div class="photo-overlay">
                     <h3 class="title">{{ photo.friendly_title }}</h3>
@@ -38,8 +38,21 @@
             </a>
             <!-- Photo close-up modal -->
             {% include 'portfolio/includes/close-up-modal.html' %}
+       
+        {% if request.user.is_superuser %}
+        <!-- Edit button-->
+        <div class="text-center text-sm-right">
+            <a class="btn my-2 delete-btn col-sm-12" href="" aria-label="delete photo"
+                id="delete-photo-{{ photo.id }}-button" data-toggle="modal"
+                data-target="#delete-photo-{{ photo.id }}-button-modal">Delete
+                Photo<span class="icon p-2">
+                    <i class="fas fa-trash" aria-hidden="true"></i>
+                </span></a>
         </div>
-
+        <!-- delete product modal -->
+        {% include 'portfolio/includes/delete-photo-modal.html' %}
+        {% endif %}
+    </div>
         {% endfor %}
     </div>
 </div>
