@@ -4,7 +4,7 @@ from django.contrib import messages
 
 from .models import About, Assisted, Shows, Editorials, Celebrities, Music, Tv, Commercials
 
-from .forms import AboutForm, AssistedForm, ShowsForm, EditorialsForm, CelebritiesForm
+from .forms import AboutForm, AssistedForm, ShowsForm, EditorialsForm, CelebritiesForm, MusicForm
 
 
 def bio(request):
@@ -190,6 +190,38 @@ def edit_celebrities(request, celebrities_id):
     context = {
         'celebrities_form': celebrities_form,
         'celebrities_section': celebrities_section,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def edit_music(request, music_id):
+    """ Edit music section  """
+
+    if not request.user.is_superuser:
+        messages.error(request, 'Functionality available to the site owner only.')
+        return redirect(reverse('bio'))
+
+    music_section = get_object_or_404(Music, pk=music_id)
+    # music social icons in a footer
+    
+    if request.method == 'POST':
+        music_form = MusicForm(request.POST, instance=music_section)
+        if music_form.is_valid():
+            music_form.save()
+            messages.success(request, 'Section edited successfully!')
+            return redirect(reverse('bio'))
+        else:
+            messages.error(request, 'Hmmm... something went wrong!')
+    else:
+        music_form = MusicForm(instance=music_section)
+        messages.info(request, 'You are editing music section!')
+
+    template = 'bio/includes/edit-templates/edit-music.html'
+    context = {
+        'music_form': music_form,
+        'music_section': music_section,
     }
 
     return render(request, template, context)
