@@ -4,7 +4,7 @@ from django.contrib import messages
 
 from .models import About, Assisted, Shows, Editorials, Celebrities, Music, Tv, Commercials
 
-from .forms import AboutForm, AssistedForm, ShowsForm
+from .forms import AboutForm, AssistedForm, ShowsForm, EditorialsForm
 
 
 def bio(request):
@@ -126,6 +126,38 @@ def edit_shows(request, shows_id):
     context = {
         'shows_form': shows_form,
         'shows_section': shows_section,
+    }
+
+    return render(request, template, context)
+
+
+@login_required
+def edit_editorials(request, editorials_id):
+    """ Edit editorials section  """
+
+    if not request.user.is_superuser:
+        messages.error(request, 'Functionality available to the site owner only.')
+        return redirect(reverse('bio'))
+
+    editorials_section = get_object_or_404(Editorials, pk=editorials_id)
+    # editorials social icons in a footer
+    
+    if request.method == 'POST':
+        editorials_form = EditorialsForm(request.POST, instance=editorials_section)
+        if editorials_form.is_valid():
+            editorials_form.save()
+            messages.success(request, 'Section edited successfully!')
+            return redirect(reverse('bio'))
+        else:
+            messages.error(request, 'Hmmm... something went wrong!')
+    else:
+        editorials_form = EditorialsForm(instance=editorials_section)
+        messages.info(request, 'You are editing editorials section!')
+
+    template = 'bio/includes/edit-templates/edit-editorials.html'
+    context = {
+        'editorials_form': editorials_form,
+        'editorials_section': editorials_section,
     }
 
     return render(request, template, context)
