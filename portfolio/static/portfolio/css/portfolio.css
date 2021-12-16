@@ -42,7 +42,8 @@ body,
 }
 
 .footer a i,
-.footer-link {
+.footer-link,
+.footer-link a {
     color: var(--black);
 }
 
