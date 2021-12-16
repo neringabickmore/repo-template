@@ -47,3 +47,17 @@ def upload_photo(request):
         'upload_form': upload_form
     }
     return render(request, template, context)
+
+
+@login_required
+def delete_photo(request, photo_id):
+    """ Delete photo """
+
+    if not request.user.is_superuser:
+        messages.error(request, 'Functionality available to the site owner only.')
+        return redirect(reverse('portfolio'))
+
+    product = get_object_or_404(Photo, pk=photo_id)
+    product.delete()
+    messages.success(request, 'Successfully deleted the photo!')
+    return redirect(reverse('portfolio'))
