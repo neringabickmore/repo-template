@@ -1,6 +1,23 @@
 {
-  "dependencies": {
+  "name": "",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "watch:sass": "node-sass sass/main.scss css/style.css -w",
+    "devserver": "live-server",
+    "start": "npm-run-all --parallel devserver watch:sass",
+
+    "compress:css": "node-sass css/main.css css/style.css --output-style compressed",
+    "build:css": "npm-run-all compress:css"
+  },
+  "author": "Neringa Bickmore",
+  "license": "ISC",
+  "devDependencies": {
     "node-sass": "^7.0.1",
-    "save-dev": "^0.0.1-security"
-  }
+    "npm-run-all": "^4.1.1"
+  },
+  "dependencies": {
+      "save-dev": "^0.0.1-security"
+    }
 }
